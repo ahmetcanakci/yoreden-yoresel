@@ -1,0 +1,47 @@
+{
+  "name": "hayatim-organik",
+  "version": "1.0.0",
+  "description": "Hayatım Organik",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkalafat/e-ticaret.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bkalafat/e-ticaret/issues"
+  },
+  "homepage": "https://github.com/bkalafat/e-ticaret#readme",
+  "dependencies": {
+    "@types/next": "^9.0.0",
+    "@types/react": "^16.9.44",
+    "@types/react-dom": "^16.9.8",
+    "@zeit/next-sass": "^1.0.1",
+    "@zeit/next-typescript": "^1.1.1",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.5.0",
+    "cors": "^2.8.5",
+    "isomorphic-unfetch": "^3.0.0",
+    "mongodb": "^3.6.0",
+    "next": "^9.5.5",
+    "next-connect": "^0.8.1",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.3.0",
+    "react-bootstrap-table-next": "^4.0.3",
+    "react-dom": "^16.13.1",
+    "react-image-file-resizer": "^0.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.27",
+    "typescript": "^3.9.7"
+  }
+}
