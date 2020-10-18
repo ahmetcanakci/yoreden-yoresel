@@ -1,11 +1,11 @@
 import axios from "axios"
 import fetch from 'isomorphic-unfetch'
 export const getJewelleryList = () => {
-  return fetch(process.env.NEXT_PUBLIC_API_PATH + '/api/jewellery').then(res => res)
+  return fetch(process.env.NEXT_PUBLIC_API_PATH + '/api/organik').then(res => res)
 }
 
 export const getJewellery = (id) => {
-  return fetch(process.env.NEXT_PUBLIC_API_PATH + '/api/jewellery/' + id).then(res => res)
+  return fetch(process.env.NEXT_PUBLIC_API_PATH + '/api/organik/' + id).then(res => res)
 }
 
 export async function upsertJewellery(jewellery, isUpdate) {
@@ -13,7 +13,7 @@ export async function upsertJewellery(jewellery, isUpdate) {
 }
 
 async function insertJewellery(jewellery) {
-  return await fetch(process.env.NEXT_PUBLIC_API_PATH + '/api/jewellery', {
+  return await fetch(process.env.NEXT_PUBLIC_API_PATH + '/api/organik', {
     method: 'post', headers: {
       Accept: "application/json",
       "Content-Type": "application/json"
@@ -23,7 +23,7 @@ async function insertJewellery(jewellery) {
 }
 
 async function updateJewellery(jewellery) {
-  return await fetch(process.env.NEXT_PUBLIC_API_PATH + '/api/jewellery/' + jewellery.id, {
+  return await fetch(process.env.NEXT_PUBLIC_API_PATH + '/api/organik/' + jewellery.id, {
     method: 'put', headers: {
       Accept: "application/json",
       "Content-Type": "application/json"
@@ -33,7 +33,7 @@ async function updateJewellery(jewellery) {
 }
 
 export async function deleteJewellery(id) {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_PATH + '/api/jewellery/' + id, {
+  const res = await fetch(process.env.NEXT_PUBLIC_API_PATH + '/api/organik/' + id, {
     method: 'delete'
   })
 }

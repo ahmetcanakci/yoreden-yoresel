@@ -20,7 +20,7 @@ const Index = (props: IIndexProps) => {
         <title>Hayatım Organik - Organik Gıda</title>
         <meta name="title" content="Hayatım Organik - Organik Gıda" />
         <meta name="description" content="Organik ürünler bir tık uzağınızda." />
-        <meta property="og:image" content={props.products[0].image}/>
+        <meta property="og:image" content={props.products[0] ? props.products[0].image : ""}/>
         <meta property="og:url" content="https://hayatimorganik.com"/>
         <meta name="twitter:card" content="summary_large_image"/>
 
