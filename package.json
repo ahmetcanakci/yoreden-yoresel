@@ -9,6 +9,11 @@
     "start": "next start",
     "export": "next export"
   },
+  "engines" :{
+      "node": "12.18.3",
+      "npm":"6.14.6"
+
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bkalafat/e-ticaret.git"
