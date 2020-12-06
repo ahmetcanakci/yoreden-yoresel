@@ -9,22 +9,17 @@
     "start": "next start",
     "export": "next export"
   },
-  "engines" :{
-      "node": "12.18.3",
-      "npm":"6.14.6"
-
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bkalafat/e-ticaret.git"
+    "url": "git+https://github.com/hayatimorganik/hayatim-organik.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bkalafat/e-ticaret/issues"
+    "url": "https://github.com/hayatimorganik/hayatim-organik/issues"
   },
-  "homepage": "https://github.com/bkalafat/e-ticaret#readme",
+  "homepage": "https://github.com/hayatimorganik/hayatim-organik/edit/master/README.md",
   "dependencies": {
     "@types/next": "^9.0.0",
     "@types/react": "^16.9.44",
