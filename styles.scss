@@ -21,13 +21,13 @@ $max-width: 1000px;
 
 @mixin mobile {
   @media (max-width: '600px') {
-      @content;
+    @content;
   }
 }
 
 @mixin smallerThanDesktop {
   @media (max-width: '1000px') {
-      @content;
+    @content;
   }
 }
 
@@ -37,7 +37,8 @@ $max-width: 1000px;
   font-size: 16px;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -75,12 +76,13 @@ html, body {
   }
 
   &__logo {
-    height: 38px;
+    height: 120px;
   }
 
   &__title {
-    margin: 0;
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 24px;
     margin-left: 20px;
   }
@@ -113,7 +115,11 @@ html, body {
 
   h2 {
     font-size: 100px;
-    @include mobile { font-size: 50px; }
+
+    @include mobile {
+      font-size: 50px;
+    }
+
     margin: 0;
     color: $color-dark;
   }
@@ -129,28 +135,28 @@ html, body {
 
   display: grid;
   grid-template-areas:
-  "title        title         image"
-  "description  description  image"
-  "button       button       image"
-  ".            .            image";
+    "title        title         image"
+    "description  description  image"
+    "button       button       image"
+    ".            .            image";
   grid-template-columns: 1fr 1fr 3fr;
   margin-bottom: 100px;
   grid-column-gap: 100px;
 
   &:nth-of-type(odd) {
     grid-template-areas:
-    "image title        title"
-    "image description  description"
-    "image button       button"
-    "image .            .";
+      "image title        title"
+      "image description  description"
+      "image button       button"
+      "image .            .";
     grid-template-columns: 3fr 1fr 1fr;
 
     @include mobile {
       grid-template-areas:
-      "image        image      "
-      "title         title     "
-      "description  description"
-      "button       button     ";
+        "image        image      "
+        "title         title     "
+        "description  description"
+        "button       button     ";
       grid-template-columns: 1fr 1fr;
 
       img {
@@ -172,6 +178,7 @@ html, body {
     grid-area: description;
     line-height: 1.75rem;
     min-height: 175px;
+
     @include mobile {
       min-height: 0px;
     }
@@ -182,12 +189,13 @@ html, body {
     font-size: 28px;
     font-weight: bold;
   }
+
   &__from-price {
     grid-area: from-price;
     padding-right: 8px;
     text-decoration: line-through;
     font-size: 28px;
-    color:$color-purple;
+    color: $color-purple;
     font-weight: bold;
   }
 
@@ -219,6 +227,7 @@ html, body {
 
     &:hover {
       transition: 0.2s all;
+
       &:before {
         transform: scale(1.15, 1.4);
       }
@@ -242,10 +251,10 @@ html, body {
 
   @include mobile {
     grid-template-areas:
-    "image        image      "
-    "title         title     "
-    "description  description"
-    "button       button     ";
+      "image        image      "
+      "title         title     "
+      "description  description"
+      "button       button     ";
     grid-template-columns: 1fr 1fr;
 
     img {
@@ -261,6 +270,7 @@ html, body {
   background-color: $color-light-grey;
   padding-top: 100px;
   padding-bottom: 100px;
+
   &__title {
     font-size: 36px;
 
@@ -291,6 +301,7 @@ html, body {
 
     &:hover {
       transition: 0.2s all;
+
       &:before {
         transform: scale(1.15, 1.4);
       }
@@ -316,6 +327,7 @@ html, body {
 .footer {
   color: white;
   background: linear-gradient(90deg, #707070 0%, #474747 100%);
+
   &__left {
     margin-left: auto;
   }
@@ -323,6 +335,7 @@ html, body {
   a {
     color: white;
   }
+
   p {
     display: flex;
     margin: 0;

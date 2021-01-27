@@ -20,9 +20,9 @@ const Index = (props: IIndexProps) => {
         <title>Yöreden Yöresel</title>
         <meta name="title" content="Yöreden Yöresel" />
         <meta name="description" content="Türkiye'nin dört bir yanından doğal ve yöresel ürünler." />
-        <meta property="og:image" content={props.products[0] ? props.products[0].image : ""}/>
-        <meta property="og:url" content="https://yoredenyoresel.com"/>
-        <meta name="twitter:card" content="summary_large_image"/>
+        <meta property="og:image" content={props.products[0] ? props.products[0].image : ""} />
+        <meta property="og:url" content="https://yoredenyoresel.com" />
+        <meta name="twitter:card" content="summary_large_image" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://yoredenyoresel.com" />
@@ -38,9 +38,7 @@ const Index = (props: IIndexProps) => {
       <main className="main">
         <img src="/background-jew.png" alt="a" className="background-image" />
         <div className="promotional-message">
-          <h3>Yöreden</h3>
-          <h2>Yöresel</h2>
-          <p><strong>Yöresel ürünler</strong> bir tık uzağınızda.</p>
+          <p>Türkiye'nin dört bir yanından <strong>doğal ve yöresel ürünler</strong> bir tık uzağınızda.</p>
         </div>
         <ProductList products={props.products} />
         <Contact />
