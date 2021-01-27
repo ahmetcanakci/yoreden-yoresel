@@ -7,7 +7,7 @@ export default function Header() {
         <img src="/logo.png" alt="" className="header__logo" />
       </Link>
       <Link href="/">
-        <h1 className="header__title">Hayatım Organik</h1>
+        <h1 className="header__title">Yöreden Yöresel</h1>
       </Link>
 
     </header>

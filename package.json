@@ -1,7 +1,7 @@
 {
-  "name": "hayatim-organik",
+  "name": "yoreden-yoresel",
   "version": "1.0.0",
-  "description": "Hayatım Organik",
+  "description": "Yöreden Yöresel",
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hayatimorganik/hayatim-organik.git"
+    "url": "git+https://github.com/ahmetcanakci/yoreden-yoresel.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hayatimorganik/hayatim-organik/issues"
+    "url": "https://github.com/ahmetcanakci/yoreden-yoresel/issues"
   },
-  "homepage": "https://github.com/hayatimorganik/hayatim-organik/edit/master/README.md",
+  "homepage": "https://github.com/ahmetcanakci/yoreden-yoresel/edit/master/README.md",
   "dependencies": {
     "@types/next": "^9.0.0",
     "@types/react": "^17.0.0",

@@ -16,7 +16,7 @@ const Editor = (props) => {
   const router = useRouter()
   const { id } = router.query
   const isUpdate = id != 'new';
-  const [jewellery, setJewellery] = useState(isUpdate ? props.jewellery ? props.jewellery : CONST.DEFAULT_JEWELLERY : CONST.DEFAULT_JEWELLERY)
+  const [product, setProduct] = useState(isUpdate ? props.product ? props.product : CONST.DEFAULT_PRODUCT : CONST.DEFAULT_PRODUCT)
 
   const fileSelectorHandler = event => {
     setSelectedFile(event.target.files[0])
@@ -34,14 +34,14 @@ const Editor = (props) => {
         return API.uploadFile(file)
       })
       .then(res => {
-        setJewellery({ ...jewellery, image: res.data.fileUrl })
+        setProduct({ ...product, image: res.data.fileUrl })
         setSubmitting(true)
       })
   }
 
   useEffect(() => {
     if (isSubmitting) {
-      API.upsertJewellery(jewellery, isUpdate).then(() => {
+      API.upsertProduct(product, isUpdate).then(() => {
         Router.push('/panel')
       })
       setSubmitting(false)
@@ -93,31 +93,31 @@ const Editor = (props) => {
             <Form.Group>
               <Form.Label>Adı</Form.Label>
               <Form.Control
-                value={jewellery.name}
-                onChange={e => setJewellery({ ...jewellery, name: e.target.value })}
+                value={product.name}
+                onChange={e => setProduct({ ...product, name: e.target.value })}
               />
             </Form.Group>
 
             <Form.Group>
               <Form.Label>Açıklama</Form.Label>
               <Form.Control
-                value={jewellery.description}
-                onChange={e => setJewellery({ ...jewellery, description: e.target.value })}
+                value={product.description}
+                onChange={e => setProduct({ ...product, description: e.target.value })}
                 as="textarea"
               />
             </Form.Group>
             <Form.Group>
               <Form.Label>Ücret</Form.Label>
               <Form.Control
-                value={jewellery.fromPrice}
-                onChange={e => setJewellery({ ...jewellery, fromPrice: Number.parseInt(e.target.value) })}
+                value={product.fromPrice}
+                onChange={e => setProduct({ ...product, fromPrice: Number.parseInt(e.target.value) })}
               />
             </Form.Group>
             <Form.Group>
               <Form.Label>İndirimli Ücret</Form.Label>
               <Form.Control
-                value={jewellery.price}
-                onChange={e => setJewellery({ ...jewellery, price: Number.parseInt(e.target.value) })}
+                value={product.price}
+                onChange={e => setProduct({ ...product, price: Number.parseInt(e.target.value) })}
               />
             </Form.Group>
             <Button style={{ marginRight: 7 }} variant="primary" type="submit">
@@ -128,7 +128,7 @@ const Editor = (props) => {
               <Button
                 variant="danger"
                 onClick={() =>
-                  API.deleteJewellery(jewellery.id).then(function (res) {
+                  API.deleteProduct(product.id).then(function (res) {
                     Router.push('/panel')
                   })
                 }
@@ -144,12 +144,12 @@ const Editor = (props) => {
 
 export async function getStaticPaths() {
 
-  const res = await API.getJewelleryList()
-  const jewelleryList = await res.json()
+  const res = await API.getProductList()
+  const productList = await res.json()
 
   // Get the paths we want to pre-render based on posts
-  const paths = jewelleryList.map((jew) => ({
-    params: { id: jew.id },
+  const paths = productList.map((p) => ({
+    params: { id: p.id },
   }))
   paths.push({ params: { id: 'new' } })
 
@@ -157,15 +157,15 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps = async ({ params }) => {
-  let jewellery = CONST.DEFAULT_JEWELLERY;
+  let product = CONST.DEFAULT_PRODUCT;
   if (params.id != 'new') {
-    const res = await API.getJewellery(params.id)
-    jewellery = await res.json()
+    const res = await API.getProduct(params.id)
+    product = await res.json()
   }
   return {
     revalidate: 1,
     props: {
-      jewellery
+      product
     }
   }
 }

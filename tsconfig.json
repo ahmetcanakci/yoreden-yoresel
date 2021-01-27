@@ -24,6 +24,6 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx", "pages/api/jewellery.js"
+    "**/*.tsx", "pages/api/product.js"
   ]
 }

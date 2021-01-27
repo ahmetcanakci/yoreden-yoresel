@@ -28,8 +28,8 @@ const Panel = (props: IIndexProps) => {
   ]
   const navigateForCreate = () => Router.push('/editor/new')
   const navigateForUpdate = {
-    onClick: (_e, jewellery) => {
-      Router.push('/editor/' + jewellery.id)
+    onClick: (_e, product) => {
+      Router.push('/editor/' + product.id)
     }
   }
   if (props.products) {
@@ -58,12 +58,12 @@ const Panel = (props: IIndexProps) => {
 
 
 export const getStaticProps = async () => {
-  const res = await API.getJewelleryList()
-  const jewelleryList = await res.json()
+  const res = await API.getProductList()
+  const productList = await res.json()
   return {
     revalidate: 1,
     props: {
-      products: jewelleryList
+      products: productList
     }
   }
 }
